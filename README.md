@@ -177,6 +177,17 @@ This is expected.
 Every new Colab runtime creates a new URL. Simply copy the new `https://*.trycloudflare.com` address and replace the value of `DEFAULT_URL` in `config.py`.
 
 ## NOTES
+#### Some Benchmarks
+
+##### > First Run
+<img width="462" height="481" alt="image" src="https://github.com/user-attachments/assets/535df5e5-b354-443a-a3df-3f25c9beae27" />
+<img width="595" height="476" alt="image" src="https://github.com/user-attachments/assets/f7505ff4-8a91-4ec1-af3e-cc76f5daf7d0" />
+
+#### > Second Run
+<img width="440" height="482" alt="image" src="https://github.com/user-attachments/assets/a85b35ab-99cd-4893-8ee7-80ecef9ff5ab" />
+<img width="587" height="470" alt="image" src="https://github.com/user-attachments/assets/32ee281f-1d79-4cfd-84c9-c6d2d716ed8a" />
+
+
 The benchmark demonstrates that CLIP inference is not the dominant contributor to end-to-end latency. Image embedding required only 0.535–1.823 seconds of server-side computation, whereas total request latency ranged from 6.6–23.4 seconds. This indicates that image transfer, preprocessing, serialization, and HTTP communication account for the majority of execution time. Database insertion and semantic search remained below 10 ms and 3 ms respectively, showing that vector database operations contribute negligibly to the overall pipeline. Furthermore, inference throughput remained approximately constant (≈8 images/s), demonstrating stable scalability of the embedding model with increasing batch size.
 ---
 
